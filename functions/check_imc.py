@@ -1,4 +1,4 @@
-def give_imc():
+def check_imc():
     weight = float(73) # kg
     size = float(1.80) # m
     imc = weight/size**2
@@ -19,4 +19,4 @@ def give_imc():
         print("Votre IMC est de", round(imc, 1), ". Vous êtes en obésité morbide.")
 
 
-give_imc()
+check_imc()
