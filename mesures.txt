@@ -1,0 +1,24 @@
+6 fevrier :
+
+jeremy:
+
+- age 18 
+- taille 175
+- poids 75
+- sexe m
+- bpm 72
+- oxy 99%
+- tas 112
+- tad 68
+
+Najm
+
+- age 33
+- poids 73
+- taille 181
+- sexe m
+- bpm 73
+- oxy 100%
+- tas 117
+- tad 84
+

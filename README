@@ -1,9 +1,9 @@
-Projet Gestion Suivi Médical :
+# Projet Gestion Suivi Médical
 
-Contexte : 
-L’idée est de pouvoir établir un suivi médical des constantes vitales d’une personne au cours du temps. L’utilisateur rentrerait ses données médicales via une interface web connecté à un serveur local en Go et le programme renverrait un rapport de son état de santé global comprenant un suivi de son pouls, de sa tension ainsi que de son IMC. Le but est d’automatiser la prise d’informations médicales de base afin de rendre un rapport détaillé avec des conseils en plus pour l’utilisateur.
+## Contexte : 
+L’idée est de pouvoir établir un suivi médical des constantes vitales d’une personne au cours du temps. L’utilisateur rentrerait ses données médicales via une interface web connecté à un serveur local en Python et le programme renverrait un rapport de son état de santé global comprenant un suivi de son pouls, de sa tension ainsi que de son IMC. Le but est d’automatiser la prise d’informations médicales de base afin de rendre un rapport détaillé avec des conseils en plus pour l’utilisateur.
 
-Technique : 
--	Backend en Go
+## Technique : 
+-	Backend en Python
 -	BDD en MySQL
 -	Frontend HTML/CSS et Template en Go
