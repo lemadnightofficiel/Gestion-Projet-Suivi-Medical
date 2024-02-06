@@ -3,7 +3,7 @@ def check_pulse():
     sexe = "Homme"
     age = 18
 
-    if age < 2:
+    if age <= 2:
         if 80 <= bpm <= 160:
             print("Votre BPM est de", bpm, ". Votre cœur est en bonne santé.")
         elif bpm < 80:
@@ -97,4 +97,16 @@ def check_pulse():
             else:
                 print("Votre BPM est de", bpm, ", il est trop élevé. Vous souffrez de tachycardie.")
 
+
+def check_saturation():
+    sat = 98
+
+    if 94 <= sat <= 98:
+        print("Votre saturation en oxygène est de", sat,", tout va bien.")
+    elif 90<= sat <= 93:
+        print("Votre saturation en oxygène est de", sat,", elle est médiocre.")
+    else:
+        print("Votre saturation en oxygène est de", sat,", cela est dangereux.")
+
 check_pulse()
+check_saturation()
