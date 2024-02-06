@@ -1,7 +1,7 @@
-def check_imc():
-    weight = float(73) # kg
-    size = float(1.80) # m
-    imc = weight/size**2
+def check_imc(weight, height):
+    weight = float(weight) # kg
+    height = float(height) # m
+    imc = weight/height**2
 
     if imc < 16.5:
         print("Votre IMC est de", round(imc, 1), ". Vous êtes en insuffisance pondérale sévère.")
@@ -19,4 +19,4 @@ def check_imc():
         print("Votre IMC est de", round(imc, 1), ". Vous êtes en obésité morbide.")
 
 
-check_imc()
+check_imc(73, 1.80)
