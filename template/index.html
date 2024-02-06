@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi Médical</title>
+    <link rel="stylesheet" href="static/index.css">
+</head>
+<body>
+    <header>
+        
+        <img src="./static/image/170738091.png" alt="">
+    </header>
+    <h1>Suivi Médical</h1>
+    <form action="/submit" method="post" class="start">
+        <label>Nom</label>
+        <input type="text" name="nom" required>
+        
+        <label>Sexe</label>
+        <select name="sexe" required>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+        </select>
+
+        <label>Pouls (BPM)</label>
+        <input type="number" name="pouls">
+
+        <label>Age (ans)</label>
+        <input type="number" name="ans" required>
+
+        <label>Taille (cm)</label>
+        <input type="number" name="taille" required>
+        
+        <label>Poids</label>
+        <input type="number" name="poids">
+
+        <label>Tension systolique (TAS)</label>
+        <input type="number" name="tas" required>
+        
+
+        <label>Tension diastolique (TAD)</label>
+        <input type="number" name="tad" required>
+
+        
+        <label>Commentaires</label>
+        <textarea rows="5" name="commentaires"></textarea>
+
+        <button type="submit">Enregistrer</button>
+    </form>
+
+</body>
+</html>
