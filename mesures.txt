@@ -22,3 +22,24 @@ Najm
 - tas 117
 - tad 84
 
+charlie
+
+- age 25
+- poids 74
+- taille 170
+- sexe m
+- bpm 79
+- oxy 98%
+- tas 131
+- tad 83
+
+JB
+
+- age 17
+- poids 
+- taille 
+- sex m
+- bpm 69
+- oxy 97%
+- tas 138
+- tad 64
