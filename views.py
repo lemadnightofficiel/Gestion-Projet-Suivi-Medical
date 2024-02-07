@@ -4,16 +4,12 @@ views = Blueprint(__name__, "views")
 
 @views.route("/")
 def home():
-    return render_template("index.html", name="Tim")
+    return render_template("index.html", name="Home")
 
-@views.route("/profile/<username>")
-def profile(username):
-    args =request.args
-    return render_template("index.html", name=username) 
+@views.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html", name="Dashboard")
 
-@views.route("/page")
-def page():
-    args =request.args
-    name = args.get('name') #/name=
-    return render_template("index.html", name=name)
-
+@views.route("/report")
+def report():
+    return render_template("report.html", name="Report")
