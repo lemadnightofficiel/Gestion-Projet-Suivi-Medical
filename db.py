@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect("medical_info.db")
+connection = sqlite3.connect("pulse_report.db")
 cursor = connection.cursor()
 
 User_values = [

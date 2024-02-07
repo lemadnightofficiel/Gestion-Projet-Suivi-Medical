@@ -59,7 +59,7 @@ header ul li:first-child {
     margin-left: 0; 
 }
 /* Styles pour les sections de la page */
-main {
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
