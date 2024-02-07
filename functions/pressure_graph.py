@@ -9,10 +9,12 @@ def bpm_graph():
 
     plt.plot(dates, systolique, label= "Pression systolique", color= "red", linestyle='-')
     plt.plot(dates, diastolique, label= "Pression diastolique", color= "blue", linestyle='-')
+    plt.xlabel("Dates")
+    plt.ylabel("Pressions cardiovasculaires")
     plt.title('Suivi de votre Tension :')
     plt.legend()
     
-    time = datetime.now().strftime("%H%M%d%m%Y")
+    time = datetime.now().strftime("%Y-%m-%d")
     plt.savefig(f"assets/pressure_graph_{time}.png")
 
 bpm_graph()
