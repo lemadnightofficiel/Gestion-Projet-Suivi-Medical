@@ -1,6 +1,4 @@
-def check_pressure():
-    pas = 113
-    pad = 78
+def check_pressure(pas, pad):
 
     if pas < 50 and pad < 50:
         print("Vous êtes en hypotension sévère.")
@@ -14,11 +12,13 @@ def check_pressure():
         print("Vous êtes en pré-hypertension.")
     elif 140 <= pas < 160  and 90 <= pad < 100:
         print("Vous êtes en hypertension légère.")
-    elif 160 <= pas < 180  and 100 <= pad < 110:
+    elif 160 <= pas < 180  and 100 <= pad < 105:
         print("Vous êtes en hypertension modérée.")
-    elif pas >= 160 and pad <= 90:
+    elif pas >= 180 or pad >= 110:
+        print("Vous êtes en Hypertension avancée.")
+    elif pas >= 160:
         print("Vous êtes en hypertension systolique.")
     else:
-        print("Vous êtes en Hypertension avancée")
+        print("Votre tension est à surveiller car elle peut présenter des fluctuations.")
 
-check_pressure()
+check_pressure(117,84)
