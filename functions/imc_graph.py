@@ -7,12 +7,10 @@ def imc_graph():
     y = [17,17.5,18.5,19,19.2,19.5]
 
     plt.plot(x, y, label= "IMC", color= "green", linestyle='-')
-    plt.xlabel('Dates')
-    plt.ylabel('IMC')
     plt.title('Suivi de votre IMC :')
     plt.legend()
 
     time = datetime.now().strftime("%H%M%d%m%Y")
-    plt.savefig(f"assets/imc_graph/graph_{time}.png")
+    plt.savefig(f"assets/imc_graph_{time}.png")
 
 imc_graph()
