@@ -1,15 +1,29 @@
-from flask import Blueprint, render_template, request, flash
+from flask import Blueprint, render_template, request, flash, redirect, url_for
+import database_functions
 
 views = Blueprint(__name__, "views")
 
 @views.route("/")
 def home():
-    return render_template("index.html", name="Tim")
+    return render_template("index.html")
 
-@views.route("/profile/<username>")
-def profile(username):
-    args =request.args
-    return render_template("index.html", name=username) 
+@views.route("/form/<username>", methods = ['GET','POST'])
+def form(username):
+    if request.method == 'POST':
+        height = request.form.get('height')
+        weight = request.form.get('weight')
+        bpm = request.form.get('bpm')
+        oxy_sat = request.form.get('oxy_sat')
+        tas = request.form.get('tas')
+        tad = request.form.get('tad')
+        #check info
+        
+        #if correct add to database
+        medical_values = (height, weight, bpm, oxy_sat, tas, tad)
+        database_functions.send_to_medicalinfo_db(medical_values,username)
+        return redirect(url_for("report")) #renvoie l'utilisateur vers la page suivante
+
+    return render_template("form.html")
 
 @views.route("/page")
 def page():
@@ -17,18 +31,4 @@ def page():
     name = args.get('name') #/name=
     return render_template("index.html", name=name)
 
-@views.route("/sendinfo" , methodes = ['GET','POST'])
-def info():
-    if request.method == 'POST':
-        name = request.form.get('name')
-        lastname = request.form.get('lastname')
-
-        if len(name) <= 0:
-            flash('Please input name', category='error')
-        elif len(lastname) <= 0:
-            flash('Please input last name', category='error')
-        else:
-            flash('yay name and lastname are valid!', category='success')
-            #add to database
-    return render_template("index.html")
 
