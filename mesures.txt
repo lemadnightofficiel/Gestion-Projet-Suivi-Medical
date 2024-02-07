@@ -11,6 +11,11 @@ jeremy:
 - tas 112
 - tad 68
 
+- bpm 66
+- oxy 97
+- tas 105
+- tad 67
+
 Najm
 
 - age 33
