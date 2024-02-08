@@ -32,7 +32,6 @@ def signup():
             return render_template("join-us.html", message = "User already exists! If this is you, go to the login page")
         if password != password_confirm:
             return render_template("join-us.html", message = "Please confirm your new password")
-        
         database_functions.send_to_users_db(name,lastname,sex,birthday,username, password)
     return render_template("join-us.html")
 
@@ -41,7 +40,6 @@ def signup():
 def form(username):
     if database_functions.check_date(username):
         return redirect(url_for("views.report")) #renvoie l'utilisateur vers la page suivante
-    
     if request.method == 'POST':
         height = int(request.form.get('height'))
         weight = int(request.form.get('weight'))
@@ -56,7 +54,6 @@ def form(username):
         medical_values = (height, weight, bpm, oxy_sat, tas, tad)
         database_functions.send_to_medicalinfo_db(medical_values,username)
         return redirect(url_for("views.report")) #renvoie l'utilisateur vers la page suivante
-
     return render_template("form.html")
 
 # Report page
