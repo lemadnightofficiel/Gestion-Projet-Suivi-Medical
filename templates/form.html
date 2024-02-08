@@ -21,27 +21,27 @@
             <section class="IMC">
                 <h2>Section IMC</h2>
                 <label for="taille">Taille (cm)</label>
-                <input type="number" id="taille" name="height" required autofocus placeholder="Entrer votre taille">
+                <input type="number" id="taille" name="height" required autofocus placeholder="Entrer votre taille" pattern="[0-9]" min="0">
         
                 <label for="poids">Poids (kg)</label>
-                <input type="number" id="poids" name="weight" required placeholder="Entrer votre poids">
+                <input type="number" id="poids" name="weight" required placeholder="Entrer votre poids" pattern="[0-9]" min="0">
             </section>
             <section class="generale">
                 <article class="BPM">
                     <h2>Section BPM</h2>
                     <label for="bpm">BPM</label>
-                    <input type="number" id="bpm" name="bpm" placeholder="Entrer votre battement par minutes">
+                    <input type="number" id="bpm" name="bpm" placeholder="Entrer votre battement par minutes" pattern="[0-9]" min="0">
 
                     <label for="oxygene">Taux d'oxygénation (%)</label>
-                    <input type="number" id="oxygene" name="oxy_sat" placeholder="Entrer votre taux d'oxygénation">
+                    <input type="number" id="oxygene" name="oxy_sat" placeholder="Entrer votre taux d'oxygénation" pattern="[0-9]" min="0" max="100">
                 </article>
                 <article class="tension">
                     <h2>Section Tension</h2>
                     <label for="systolique">Pression artérielle systolique</label>
-                    <input type="number" id="systolique" name="tas" placeholder="Entrer votre pression artérielle systolique">
+                    <input type="number" id="systolique" name="tas" placeholder="Entrer votre pression artérielle systolique" pattern="[0-9]" min="0">
 
                     <label for="diastolique">Pression artérielle diastolique</label>
-                    <input type="number" id="diastolique" name="tad" placeholder="Entrer votre pression artérielle diastolique">
+                    <input type="number" id="diastolique" name="tad" placeholder="Entrer votre pression artérielle diastolique" pattern="[0-9]" min="0">
                 </article>
             </section>
             <input type="submit" value="submit">
