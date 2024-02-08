@@ -57,8 +57,15 @@ def form(username):
     return render_template("form.html")
 
 # Report page
-@views.route("/report")
-def report():
-    
+@views.route("/report/<username>")
+def report(username):
+    bpm_image = 
+    bpm_message =
+    imc_image = 
+    imc_message = 
+    pressure_image =
+    pressure_message = 
+    oxy_sat_image =
+    oxy_sat_message =
     return render_template("report.html")
 
