@@ -24,6 +24,7 @@ def bpm_graph(data_list):
     plt.legend()
 
     plt.savefig(f"static/images/bpm_graph_{time}.png")
+    return "static/images/bpm_graph_{time}.png"
 
 def oxysat_graph(data_list):
 
@@ -48,6 +49,7 @@ def oxysat_graph(data_list):
     plt.legend()
 
     plt.savefig(f"static/images/oxysat_graph_{time}.png")
+    return "static/images/oxysat_graph_{time}.png"
 
 def imc_graph(data_list):
 
@@ -72,6 +74,7 @@ def imc_graph(data_list):
     plt.legend()
 
     plt.savefig(f"static/images/imc_graph_{time}.png")
+    return "static/images/imc_graph_{time}.png"
 
 def pressure_graph(data_list):
 
@@ -99,4 +102,4 @@ def pressure_graph(data_list):
     plt.legend()
 
     plt.savefig(f"static/images/pressure_graph_{time}.png")
-    
+    return "static/images/pressure_graph_{time}.png"
