@@ -15,7 +15,7 @@ def get_bpm_values(username):
         data = list(data)
         data[2] = datetime.strptime(data[2], '%Y-%m-%d').strftime('%d-%m-%Y')
         bpm_date.append(data)
-    return graph_functions.bpm_graph(bpm_date) 
+    return bpm_date 
 
 def get_oxysat_values(username):
     connection = sqlite3.connect("pulse_report.db")
@@ -30,7 +30,7 @@ def get_oxysat_values(username):
         data = list(data)
         data[1] = datetime.strptime(data[1], '%Y-%m-%d').strftime('%d-%m-%Y')
         oxysat_date.append(data) 
-    return graph_functions.oxysat_graph(oxysat_date) 
+    return oxysat_date
 
 def get_imc_values(username):
     connection = sqlite3.connect("pulse_report.db")
@@ -48,7 +48,7 @@ def get_imc_values(username):
         data[2] = datetime.strptime(data[2], '%Y-%m-%d').strftime('%d-%m-%Y')
         data.pop(1)
         imc_date.append(data)
-    return graph_functions.imc_graph(imc_date)
+    return imc_date
 
 def get_pressure_values(username):
     connection = sqlite3.connect("pulse_report.db")
@@ -63,7 +63,7 @@ def get_pressure_values(username):
         data = list(data)
         data[2] = datetime.strptime(data[2], '%Y-%m-%d').strftime('%d-%m-%Y')
         pressure_date.append(data)
-    return graph_functions.pressure_graph(pressure_date)
+    return pressure_date
 
 def get_imc(weight, height):
     weight = float(weight) # kg

@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-import database_functions, checkvalues_functions, getvalues_functions
+import database_functions, checkvalues_functions, getvalues_functions, graph_functions
 
 views = Blueprint(__name__, "views")
 
@@ -59,13 +59,13 @@ def form(username):
 def report(username):
     height,weight,bpm,oxy_sat,tas,tad, sex, birthday = database_functions.get_today_info(username)
     age = getvalues_functions.get_age(birthday)
-    bpm_image = getvalues_functions.get_bpm_values(username)
+    bpm_image = graph_functions.bpm_graph(getvalues_functions.get_bpm_values(username))
     bpm_message = checkvalues_functions.check_bpm(bpm, sex, age)
-    imc_image = getvalues_functions.get_imc_values(username)
+    imc_image = graph_functions.imc_graph(getvalues_functions.get_imc_values(username))
     imc_message = checkvalues_functions.check_imc(getvalues_functions.get_imc(height, weight))
-    pressure_image = getvalues_functions.get_pressure_values(username)
+    pressure_image = graph_functions.pressure_graph(getvalues_functions.get_pressure_values(username))
     pressure_message = checkvalues_functions.check_pressure(tas, tad)
-    oxy_sat_image = getvalues_functions.get_oxysat_values(username)
+    oxy_sat_image = graph_functions.oxysat_graph(getvalues_functions.get_oxysat_values(username))
     oxy_sat_message = checkvalues_functions.check_saturation(oxy_sat)
     return render_template("report.html", bpmimage=bpm_image, bpmmessage=bpm_message, imcimage=imc_image, imcmessage=imc_message, pressureimage=pressure_image, pressuremessage= pressure_message, oxysatimage=oxy_sat_image, oxysatmessage=oxy_sat_message)
 
