@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-import database_functions
+import database_functions, checkvalues_functions, getvalues_functions
 
 views = Blueprint(__name__, "views")
 
@@ -59,13 +59,13 @@ def form(username):
 # Report page
 @views.route("/report/<username>")
 def report(username):
-    bpm_image = 
-    bpm_message =
-    imc_image = 
-    imc_message = 
-    pressure_image =
-    pressure_message = 
-    oxy_sat_image =
-    oxy_sat_message =
+    bpm_image = getvalues_functions.get_bpm_values(username)
+    bpm_message = checkvalues_functions.check_imc()
+    imc_image = getvalues_functions.get_imc_values(username)
+    imc_message = checkvalues_functions.check_imc(getvalues_functions.get_imc())
+    pressure_image = getvalues_functions.get_pressure_values(username)
+    pressure_message = checkvalues_functions.check_pressure()
+    oxy_sat_image = getvalues_functions.
+    oxy_sat_message = checkvalues_functions.
     return render_template("report.html")
 
