@@ -1,15 +1,18 @@
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from datetime import datetime
 import os
 
 def bpm_graph(data_list):
-    
+
     time = datetime.now().strftime("%Y-%m-%d")
 
     if os.path.isfile(f"static/images/bpm_graph_{time}.png"):
         os.remove(f"static/images/bpm_graph_{time}.png")
     
     bpm_fig = plt.figure("BPM")
+    plt.figure().clear()
 
     x = []
     y = []
@@ -34,6 +37,7 @@ def oxysat_graph(data_list):
         os.remove(f"static/images/oxysat_graph_{time}.png")
     
     oxysat_fig = plt.figure("OxySat")
+    plt.figure().clear()
 
     x = []
     y = []
@@ -59,6 +63,7 @@ def imc_graph(data_list):
         os.remove(f"static/images/imc_graph_{time}.png")
 
     imc_fig = plt.figure("IMC")
+    plt.figure().clear()
 
     x = []
     y = []
@@ -84,6 +89,7 @@ def pressure_graph(data_list):
         os.remove(f"static/images/pressure_graph_{time}.png")
 
     pressure_fig = plt.figure("Pressure")
+    plt.figure().clear()
 
     systolique = []
     diastolique = []
