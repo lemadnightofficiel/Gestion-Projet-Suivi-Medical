@@ -60,5 +60,5 @@ def form(username):
 @views.route("/report")
 def report():
     
-    return render_template("index.html")
+    return render_template("report.html")
 

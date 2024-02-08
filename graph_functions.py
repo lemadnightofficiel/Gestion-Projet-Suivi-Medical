@@ -1,6 +1,6 @@
-import os
 import matplotlib.pyplot as plt
 from datetime import datetime
+import os
 
 def bpm_graph(data_list):
 

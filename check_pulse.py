@@ -44,15 +44,14 @@ def check_pulse(bpm, sexe, age):
             return "Votre BPM est de", bpm, ", il est trop élevé. Vous souffrez de tachycardie."
 
     elif 36 <= age <= 45:
-        if sexe == "Homme":
+        if sexe:
             if 63 <= bpm <= 100:
                 return "Votre BPM est de", bpm, "Votre cœur est en bonne santé."
             elif bpm < 63:
                 return "Votre BPM est de", bpm, ", il est trop bas. Vous souffrez d'insuffisance cardiaque."
             else:
                 return "Votre BPM est de", bpm, ", il est trop élevé. Vous souffrez de tachycardie."
-    else:
-        if 36 <= age <= 45:
+        else:
             if 65 <= bpm <= 100:
                 return "Votre BPM est de", bpm, "Votre cœur est en bonne santé."
             elif bpm < 65:
@@ -61,15 +60,14 @@ def check_pulse(bpm, sexe, age):
                 return "Votre BPM est de", bpm, ", il est trop élevé. Vous souffrez de tachycardie."
     
     if 46 <= age <= 55:
-        if sexe == "Homme":
+        if sexe:
             if 64 <= bpm <= 100:
                 return "Votre BPM est de", bpm, ". Votre cœur est en bonne santé."
             elif bpm < 64:
                 return "Votre BPM est de", bpm, ", il est trop bas. Vous souffrez d'insuffisance cardiaque."
             else:
                 return "Votre BPM est de", bpm, ", il est trop élevé. Vous souffrez de tachycardie."
-    else:
-        if 46 <= age <= 55:
+        else:
             if 66 <= bpm <= 100:
                 return "Votre BPM est de", bpm,". Votre cœur est en bonne santé."
             elif bpm < 66:
@@ -77,16 +75,15 @@ def check_pulse(bpm, sexe, age):
             else:
                 return "Votre BPM est de", bpm,", il est trop élevé. Vous souffrez de tachycardie."
 
-    if age <= 56:
-            if sexe == "Homme":
-                if 62 <= bpm <= 100:
-                    return "Votre BPM est de", bpm,". Votre cœur est en bonne santé."
-                elif bpm < 62:
-                    return "Votre BPM est de", bpm,", il est trop bas. Vous souffrez d'insuffisance cardiaque."
-                else:
-                    return "Votre BPM est de", bpm,", il est trop élevé. Vous souffrez de tachycardie."
-    else:
-        if age <= 56:
+    if age >= 56:
+        if sexe:
+            if 62 <= bpm <= 100:
+                return "Votre BPM est de", bpm,". Votre cœur est en bonne santé."
+            elif bpm < 62:
+                return "Votre BPM est de", bpm,", il est trop bas. Vous souffrez d'insuffisance cardiaque."
+            else:
+                return "Votre BPM est de", bpm,", il est trop élevé. Vous souffrez de tachycardie."
+        else:
             if 65 <= bpm <= 100:
                 return "Votre BPM est de", bpm,". Votre cœur est en bonne santé."
             elif bpm < 65:
