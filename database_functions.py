@@ -54,3 +54,12 @@ def check_password(username):
         return password
     else:
         return None
+
+def get_today_info(username):
+    connection = sqlite3.connect("pulse_report.db") #Connect to local database
+    cursor = connection.cursor()
+    info = [username,date.today()]
+    cursor.execute("SELECT medicalinfo.height medicalinfo.weight medicalinfo.bpm medicalinfo.oxy_sat medicalinfo.tas medicalinfo.tad, users.sex, users.birthday FROM medicalinfo INNER JOIN users ON medicalinfo.userID = users.userID WHERE users.username=? AND medicalinfo.date=?", info)
+    data = cursor.fetchall()
+    connection.close()
+    return data[0]

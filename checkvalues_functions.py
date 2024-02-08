@@ -47,7 +47,7 @@ def check_saturation(sat):
     else:
         return "Votre saturation en oxygène est de", sat,", cela est dangereux."
 
-def check_pulse(bpm, sexe, age):
+def check_bpm(bpm, sexe, age):
 
     if age <= 2:
         if 80 <= bpm <= 160:

@@ -59,13 +59,15 @@ def form(username):
 # Report page
 @views.route("/report/<username>")
 def report(username):
+    height,weight,bpm,oxy_sat,tas,tad, sex, birthday = database_functions.get_today_info(username)
+    age = getvalues_functions.get_age(birthday)
     bpm_image = getvalues_functions.get_bpm_values(username)
-    bpm_message = checkvalues_functions.check_imc()
+    bpm_message = checkvalues_functions.check_bpm(bpm, sex, age)
     imc_image = getvalues_functions.get_imc_values(username)
-    imc_message = checkvalues_functions.check_imc(getvalues_functions.get_imc())
+    imc_message = checkvalues_functions.check_imc(getvalues_functions.get_imc(height, weight))
     pressure_image = getvalues_functions.get_pressure_values(username)
-    pressure_message = checkvalues_functions.check_pressure()
-    oxy_sat_image = getvalues_functions.
-    oxy_sat_message = checkvalues_functions.
-    return render_template("report.html")
+    pressure_message = checkvalues_functions.check_pressure(tas, tad)
+    oxy_sat_image = getvalues_functions.get_oxysat_values(username)
+    oxy_sat_message = checkvalues_functions.check_saturation(oxy_sat)
+    return render_template("report.html",bpm_image,bpm_message,imc_image,imc_message,pressure_image,pressure_message,oxy_sat_image,oxy_sat_message)
 
