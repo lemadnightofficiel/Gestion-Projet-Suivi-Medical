@@ -10,11 +10,8 @@
     <header>   
         <img src="../static/images/logo.png" alt="">
         <div>
-            <li><a href="">Rapports</a></li>
+            <li><a href="rapport.html">Rapports</a></li>
         </div>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-        </ul>
         <form class="logout" action="/logout" method="post">
             <input type="submit" value="Déconnexion">
         </form>
@@ -30,6 +27,7 @@
                 <label for="poids">Poids (kg)</label>
                 <input type="number" id="poids" name="weight" required placeholder="Entrer votre poids" pattern="[0-9]" min="0">
             </section>
+
             <section class="generale">
                 <article class="BPM">
                     <h2>Section BPM</h2>
@@ -39,6 +37,7 @@
                     <label for="oxygene">Taux d'oxygénation (%)</label>
                     <input type="number" id="oxygene" name="oxy_sat" placeholder="Entrer votre taux d'oxygénation" pattern="[0-9]" min="0" max="100">
                 </article>
+
                 <article class="tension">
                     <h2>Section Tension</h2>
                     <label for="systolique">Pression artérielle systolique</label>

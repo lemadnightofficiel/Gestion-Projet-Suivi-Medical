@@ -4,16 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rapport</title>
-    <link rel="stylesheet" href="../static/rapport.css">
+    <link rel="stylesheet" href="../static/report.css">
 </head>
 <body>
 
     <header>
         <h1>Rapport Historique des Patients</h1>
+        <ul>
+            <li><a href="form.html">si vous n'avez pas passer le test appuis ici</a></li>
+        </ul>
         <form class="logout" action="/logout" method="post">
             <input type="submit" value="Déconnexion">
         </form>
     </header>
+
+    <div class="image-container">
+        <figure>
+            <img src="{{.bpm_image}}" alt="{{.bpm_image}}">
+            <p>{{. bpm_message =}}</p>
+        </figure>
+        <figure>
+            <img src="{{imc_image}}" alt="{{.imc_image}}">
+            <p>{{. imc_message =}}</p>
+        </figure>
+        <figure>
+            <img src="{{pressure_image}}" alt=".pressure_image">
+            <p>{{.pressure_message =}}</p>
+        </figure>
+        <figure>
+            <img src="{{oxy_sat_image}}" alt=".oxy_sat_image">
+            <p>{{.oxy_sat_message =}}</p>
+        </figure>
+    </div>
 
     <footer>
         <div class="reseaux-sociaux">
@@ -23,6 +45,5 @@
         </div>
     </footer>
     
-
 </body>
-</html>
+</html>    

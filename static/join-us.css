@@ -6,22 +6,17 @@ body {
     box-sizing: border-box;
 }
 
-#container_demo {
-    text-align: center;
-    /* margin: 0 auto; */
-    margin-top: 50px;
-}
-
-#wrapper {
+main {
     width: 600px;
     margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
 }
 
 .form {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -33,7 +28,6 @@ input[type="date" i]{
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -42,13 +36,15 @@ select {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    opacity: 1;
 }
 
 select {
     cursor: pointer;
+    border: 1px solid #0a0808;
+    opacity: 1;
 }
 
 input[type="text"],
@@ -73,6 +69,7 @@ input[type="submit"] {
     border-radius: 10px;
     cursor: pointer;
     height: 40px;
+    width: 250px;
 }
 
 input[type="submit"]:hover {
@@ -81,13 +78,43 @@ input[type="submit"]:hover {
 
 .link {
     margin-top: 15px;
+    text-decoration: none;
 }
 
 .link a {
-    color: #1ab188;
+    color: #4f1ab1;
     text-decoration: none;
 }
 
 .link a:hover {
-    text-decoration: underline;
+    color: #45a049;
+}
+
+@media only screen and (max-width: 448px) {
+    main {
+        width: 80%;
+        margin-top: 180px;
+    }
+
+    .form {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        margin-bottom: 15px;
+        width: calc(100% - 30px);
+    }
+
+    input[type="submit"] {
+        height: 35px;
+    }
+
+    .link {
+        margin-top: 10px;
+    }
 }
