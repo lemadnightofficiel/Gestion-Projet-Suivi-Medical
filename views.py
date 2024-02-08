@@ -9,9 +9,8 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        print('password', password, "username", username, 'db password', database_functions.check_password(username))
         if database_functions.check_user(username) and password == database_functions.check_password(username):
-            return redirect(url_for("views.form", username))
+            return redirect(url_for("views.form", username=username))
         else: 
             return render_template("login.html", message = "Invalid Username or Password")
     return render_template("login.html")
@@ -23,7 +22,6 @@ def signup():
         name = request.form.get('name')
         lastname = request.form.get('lastname')
         sex = request.form.get('sex')=="M"
-        print(sex)
         birthday = request.form.get('birthday')
         username = request.form.get('username')
         password = request.form.get('password1')
@@ -39,7 +37,7 @@ def signup():
 @views.route("/form/<username>", methods = ['GET','POST'])
 def form(username):
     if database_functions.check_date(username):
-        return redirect(url_for("views.report", [username])) #renvoie l'utilisateur vers la page suivante
+        return redirect(url_for("views.report", username=username)) #send user to next page
     if request.method == 'POST':
         height = int(request.form.get('height'))
         weight = int(request.form.get('weight'))
@@ -53,8 +51,8 @@ def form(username):
         #if correct add to database
         medical_values = (height, weight, bpm, oxy_sat, tas, tad)
         database_functions.send_to_medicalinfo_db(medical_values,username)
-        return redirect(url_for("views.report", [username])) #renvoie l'utilisateur vers la page suivante
-    return render_template("form.html", username)
+        return redirect(url_for("views.report", username=username)) #renvoie l'utilisateur vers la page suivante
+    return render_template("form.html")
 
 # Report page
 @views.route("/report/<username>")
@@ -69,5 +67,5 @@ def report(username):
     pressure_message = checkvalues_functions.check_pressure(tas, tad)
     oxy_sat_image = getvalues_functions.get_oxysat_values(username)
     oxy_sat_message = checkvalues_functions.check_saturation(oxy_sat)
-    return render_template("report.html",bpm_image,bpm_message,imc_image,imc_message,pressure_image,pressure_message,oxy_sat_image,oxy_sat_message)
+    return render_template("report.html", bpmimage=bpm_image, bpmmessage=bpm_message, imcimage=imc_image, imcmessage=imc_message, pressureimage=pressure_image, pressuremessage= pressure_message, oxysatimage=oxy_sat_image, oxysatmessage=oxy_sat_message)
 

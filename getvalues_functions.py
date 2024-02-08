@@ -73,5 +73,5 @@ def get_imc(weight, height):
 
 def get_age(birthday):
     today = date.today()
-    print(today)
+    birthday = datetime.strptime(birthday, "%Y-%m-%d")
     return today.year - birthday.year - ((today.month, today.day) < (birthday.month, birthday.day))
