@@ -1,6 +1,5 @@
 import sqlite3
 from datetime import datetime
-from check_imc import get_imc
 import graph_functions
 
 def get_bpm_values(username):
@@ -65,6 +64,13 @@ def get_pressure_values(username):
         data[2] = datetime.strptime(data[2], '%Y-%m-%d').strftime('%d-%m-%Y')
         pressure_date.append(data)
     return graph_functions.pressure_graph(pressure_date)
+
+def get_imc(weight, height):
+    weight = float(weight) # kg
+    height = float(height*0.1) # cm
+    imc = (weight/(height*height))
+    return imc
+
 
 get_pressure_values('jeremy')
 get_bpm_values('jeremy')
