@@ -13,6 +13,14 @@ def send_to_medicalinfo_db(medical_values,username):
     connection.close() # faut pas un bac+5 pour comprendre cette ligne
     return None
 
+def send_to_users_db(name,lastname,sex,birthday,username,password):
+    connection = sqlite3.connect("pulse_report.db") #Connect to local database
+    cursor = connection.cursor()
+    cursor.execute("INSERT INTO users (name, lastname, sex, birthday, username, password) VALUES (?, ?, ?, ?, ?, ?)", (name, lastname, sex, birthday, username, password))
+    connection.commit() # apply modifications to the database when finnished
+    connection.close() # faut pas un bac+5 pour comprendre cette ligne
+    return None
+
 def check_user(username):
     connection = sqlite3.connect("pulse_report.db") #Connect to local database
     cursor = connection.cursor()
@@ -35,3 +43,14 @@ def check_date(username):
         return False
     else:
         return True
+
+def check_password(username):
+    if check_user(username): 
+        connection = sqlite3.connect("pulse_report.db") #Connect to local database
+        cursor = connection.cursor()
+        cursor.execute("SELECT password FROM users WHERE username=?", [username])
+        password = cursor.fetchall()[0][0]
+        connection.close()
+        return password
+    else:
+        return None

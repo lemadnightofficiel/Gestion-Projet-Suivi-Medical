@@ -9,22 +9,23 @@
 <body>
     <main>
         <article id="login" class="form">
-            <form action="" autocomplete="on" method="post">
+            <form action="/" autocomplete="on" method="post">
+                {{message}}
                 <h1>Log in</h1>
                 <p>
-                    <label for="username" class="uname" data-icon="u">Your email or username</label>
-                    <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com" />
+                    <label for="username" class="uname" data-icon="u">Your username</label>
+                    <input id="username" name="username" required autofocus type="text" placeholder="mysuperusername690" />
                 </p>
                 <p>
                     <label for="password" class="youpasswd" data-icon="p">Your password</label>
-                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" />
+                    <input id="password" name="password" required type="password" placeholder="eg. X8df!90EO" />
                 </p>
                 <p class="login button">
                     <input type="submit" value="Login" name="login" />
                 </p>
                 <p class="link">
                     Not a member yet ?
-                    <a href="join-us.html" class="to_register">Join us</a>
+                    <a href="/signup" class="to_register">Join us</a>
                 </p>
             </form>
         </article>
