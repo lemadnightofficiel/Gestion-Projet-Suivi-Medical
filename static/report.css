@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    background-color: #f2f0f0;
     margin: 0;
     padding: 0;
 }
@@ -31,6 +31,54 @@ header input{
     border-radius: 12px;
     font-size: 16px;
     margin: 10px;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 17px;
+    padding: 0;
+}
+
+header ul li a {
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 20px; 
+    color: white; 
+    font-size: 20px;
+    padding: 10px;
+}
+
+header ul li:first-child {
+    margin-left: 0; 
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 90px;
+    gap: 20px;
+    flex: 1;
+    
+}
+
+figure {
+    width: 50%; 
+    margin-bottom: 20px; 
+}
+
+img {
+   
+  border-radius: 40px;   
+
+  padding: 5px; 
+  margin: auto; 
+  cursor: grab; 
+}
+
+p {
+    text-align: center; 
+    font-size: 14px; 
+    font-weight: bold; 
 }
 
 footer {

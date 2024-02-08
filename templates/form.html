@@ -10,11 +10,8 @@
     <header>   
         <img src="../static/images/logo.png" alt="">
         <div>
-            <li><a href="">Rapports</a></li>
+            <li><a href="rapport.html">Rapports</a></li>
         </div>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-        </ul>
         <form class="logout" action="/logout" method="post">
             <input type="submit" value="Déconnexion">
         </form>
@@ -25,10 +22,10 @@
                 <h2>Section IMC</h2>
                 <label for="taille">Taille (cm)</label>
                 <input type="number" id="taille" name="height" required autofocus placeholder="Entrer votre taille">
-        
                 <label for="poids">Poids (kg)</label>
                 <input type="number" id="poids" name="weight" required placeholder="Entrer votre poids">
             </section>
+
             <section class="generale">
                 <article class="BPM">
                     <h2>Section BPM</h2>
@@ -38,11 +35,11 @@
                     <label for="oxygene">Taux d'oxygénation (%)</label>
                     <input type="number" id="oxygene" name="oxy_sat" placeholder="Entrer votre taux d'oxygénation">
                 </article>
+
                 <article class="tension">
                     <h2>Section Tension</h2>
                     <label for="systolique">Pression artérielle systolique</label>
                     <input type="number" id="systolique" name="tas" placeholder="Entrer votre pression artérielle systolique">
-
                     <label for="diastolique">Pression artérielle diastolique</label>
                     <input type="number" id="diastolique" name="tad" placeholder="Entrer votre pression artérielle diastolique">
                 </article>
