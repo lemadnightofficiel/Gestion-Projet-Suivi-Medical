@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, flash
 
 views = Blueprint(__name__, "views")
 
@@ -10,6 +10,9 @@ def home():
 def dashboard():
     return render_template("dashboard.html", name="Dashboard")
 
-@views.route("/report")
+@views.route("/page")
 def report():
-    return render_template("report.html", name="Report")
+    args =request.args
+    name = args.get('name') #/name=
+    return render_template("index.html", name=name)
+

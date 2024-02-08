@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/static/style.css" rel="stylesheet" type="text/css">
-    <title>Home</title>
+    <title>Suivi Médical</title>
+    <link rel="stylesheet" href="static/index.css">
 </head>
 <body>
-    <section>
-        <h1>home page</h1>
-        <p>Hello, {{name}}</p>
-    </section>
+    <header>
+        <h2>Suivi Médical</h2>  
+    </header>
+    
+    <form action="/submit" method="post" class="start">
+        <img src="./static/image/170738091.png" alt="">
+        <label>Prénom</label>
+        <input type="text" name="nom" required>
+        
+        <label>Sexe</label>
+        <select name="sexe" required>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+        </select>
+        <label>Age (ans)</label>
+        <input type="number" name="ans" required>
+
+        <button type="submit">Enregistrer</button>
+    </form>
+
 </body>
 </html>
