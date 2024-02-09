@@ -147,3 +147,24 @@ def get_today_info(username):
     data = cursor.fetchall() # get all results from the command executed
     connection.close()
     return data[0]
+
+def get_name_lastname(username):
+    '''
+    Function: get_name_lastname
+    - collects the users name and last name from the users database
+    --------
+    params:
+    - The username of the user we want to get the name and lastname
+    -------
+    Send a request for the user's name and lastname from the users table in the database
+    -------
+    returns:
+    - Name
+    - Lastname
+    '''
+    connection = sqlite3.connect("pulse_report.db") #Connect to local database
+    cursor = connection.cursor()
+    cursor.execute("SELECT name, lastname FROM users WHERE username=?", [username]) # get userID from username in users table
+    name, lastname = cursor.fetchall()[0]
+    connection.close()
+    return name, lastname

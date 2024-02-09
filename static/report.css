@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f0f0;
+    background-color: #F5F5DC;
     margin: 0;
     padding: 0;
 }
@@ -8,9 +8,10 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(46, 179, 237);
-    color: #fff;
-    padding: 7px;
+    background: #ED213A;  
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);  
+    background: linear-gradient(to right, #93291E, #ED213A); 
+    padding: 0px;
 }
 
 h1 {
@@ -29,7 +30,7 @@ header input{
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 12px;
-    font-size: 16px;
+    font-size: 13px;
     margin: 10px;
 }
 
@@ -39,40 +40,31 @@ header ul {
     padding: 0;
 }
 
-header ul li a {
+header form {
     display: inline-block;
     text-decoration: none;
-    margin-left: 20px; 
     color: white; 
-    font-size: 20px;
-    padding: 10px;
 }
 
-header ul li:first-child {
-    margin-left: 0; 
+header .return input {
+    font-size: 13px;
+    width: 270px;
 }
 
 .image-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin-top: 90px;
-    gap: 20px;
-    flex: 1;
-    
-}
-
-figure {
-    width: 50%; 
-    margin-bottom: 20px; 
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 0px;   
 }
 
 img {
-   
-  border-radius: 40px;   
-
-  padding: 5px; 
-  margin: auto; 
-  cursor: grab; 
+    position: relative;
+    left: 90px;
+    
+    width: 450px;
+    height: 250px;
+    border-radius: 40px;  
+    cursor: grab; 
 }
 
 p {
@@ -82,19 +74,16 @@ p {
 }
 
 footer {
-    background-color: rgb(46, 179, 237); /
-    color: #fff;
     text-align: center;
     padding: 20px 0;
-    position: fixed;
     bottom: 0;
-    width: 100%;
+    
     gap: 40px;
 }
 
 .reseaux-sociaux a {
     text-decoration: none;
-    color: #fff; 
+    color: #130505; 
     margin: 20px;
 }
 

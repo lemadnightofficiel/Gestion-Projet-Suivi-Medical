@@ -7,36 +7,38 @@
     <link rel="stylesheet" href="../static/report.css">
 </head>
 <body>
-
     <header>
-        <h1>Rapport Historique des Patients</h1>
-        <ul>
-            <li><a href="/form">si vous n'avez pas passer le test appuis ici</a></li>
-        </ul>
-        <form class="logout" action="/form" method="post">
-            <input type="submit" value="Déconnexion">
-        </form>
+        <h1>Historique des Patients</h1>
+        <a href="/">Logout</a>  
     </header>
-
-    <div class="image-container">
-        <figure>
-            <img src="{{bpmimage}}" alt="bpm graph">
-            <p>{{bpmmessage}}</p>
-        </figure>
-        <figure>
-            <img src="{{imcimage}}" alt="imc graph">
-            <p>{{imcmessage}}</p>
-        </figure>
-        <figure>
-            <img src="{{pressureimage}}" alt="pressure graph">
-            <p>{{pressuremessage}}</p>
-        </figure>
-        <figure>
-            <img src="{{oxysatimage}}" alt="oxygen saturation graph">
-            <p>{{oxysatmessage}}</p>
-        </figure>
-    </div>
-
+    <main>
+        <h1>{{welcome}}</h1>
+        {% if boolean == True %}
+        <h2>{{message}}</h2>
+        <form class="return" method="post">
+            <input type="hidden" name="takeform">
+            <input type="submit" value="si vous n'avez pas passer le test appuis ici">
+        </form>
+        {% endif %}
+        <div class="image-container">
+            <figure>
+                <img src="{{bpmimage}}" alt="bpm graph">
+                <p>{{bpmmessage}}</p>
+            </figure>
+            <figure>
+                 <img src="{{imcimage}}" alt="imc graph">
+                 <p>{{imcmessage}}</p>
+            </figure>
+            <figure>
+                <img src="{{pressureimage}}" alt="pressure graph">
+                <p>{{pressuremessage}}</p>
+            </figure>
+            <figure>
+                <img src="{{oxysatimage}}" alt="oxygen saturation graph">
+                <p>{{oxysatmessage}}</p>
+            </figure>
+        </div>
+    </main>
     <footer>
         <div class="reseaux-sociaux">
             <a href="https://www.facebook.com/VotrePage" target="_blank">Facebook</a>
@@ -44,6 +46,5 @@
             <a href="https://www.instagram.com/VotreCompte/" target="_blank">Instagram</a>
         </div>
     </footer>
-    
 </body>
 </html>    
