@@ -6,7 +6,12 @@ views = Blueprint(__name__, "views")
 # Login page
 @views.route("/", methods = ['GET','POST'])
 def login():
-    
+    '''
+    Function: login
+    - Shows the login page
+    - The user sends their username and password
+    - 
+    '''
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
@@ -44,10 +49,8 @@ def form(username):
         skipform = request.form.get('skipform')
         print(skipform)
         if skipform=="skipform":
-            print("test")
             return redirect(url_for("views.report", username=username)) #renvoie l'utilisateur vers la page suivante
         else:
-            print("test2")
             height = int(request.form.get('height'))
             weight = int(request.form.get('weight'))
             bpm = int(request.form.get('bpm'))
@@ -84,7 +87,6 @@ def report(username):
         imc_message = checkvalues_functions.check_imc(getvalues_functions.get_imc(height, weight))
         pressure_message = checkvalues_functions.check_pressure(tas, tad)
         oxy_sat_message = checkvalues_functions.check_saturation(oxy_sat)
-
         graph_functions.delete_allgraph()
 
     # Graphics
