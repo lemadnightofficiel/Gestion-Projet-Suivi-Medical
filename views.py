@@ -102,15 +102,9 @@ def report(username):
         if takeform=="takeform":
             return redirect(url_for("views.form", username=username)) # Redirects user to the form page
     
-<<<<<<< HEAD
-    if len(database_functions.get_today_info(username))==0:
+    if len(database_functions.get_today_info(username))==0: # Checks if the user has filled the form today
         bpm_message = imc_message = pressure_message = oxy_sat_message = "Vous n'avez pas rempli le formulaire aujoud'hui"
         message = "Vous n'avez pas rempli le formulaire aujourd'hui! Pour avoir un suivi personalisé, veuillez remplir le formulaire chaque jour."
-=======
-    if len(database_functions.get_today_info(username))==0: # Checks if the user has filled the form today
-        bpm_message = imc_message = pressure_message = oxy_sat_message = "Vous n'avez pas remplis le formulaire aujoud'hui"
-        message = "Vous n'avez pas remplis le formulaire aujourd'hui! Pour avoir un suivi personalisé, veuillez remplir le formulaire chaque jour."
->>>>>>> jeremy
         boolean = True
     else: # Collects the user's medical info from today
         message = ""
@@ -136,12 +130,8 @@ def report(username):
 
     # Collects user's name and last name to display a personalized message
     name,lastname = database_functions.get_name_lastname(username)
-<<<<<<< HEAD
-    welcome = "Bienvenue " + str(name) + " " + str(lastname) + " !"
-=======
     welcome = "Bienvenue " + str(name) + " " + str(lastname) + "!"
 
     # Specifies the page displayed and sends the information displayed on the page 
->>>>>>> jeremy
     return render_template("report.html", bpmimage=bpm_image, bpmmessage=bpm_message, imcimage=imc_image, imcmessage=imc_message, pressureimage=pressure_image, pressuremessage= pressure_message, oxysatimage=oxy_sat_image, oxysatmessage=oxy_sat_message, welcome=welcome, message=message, boolean=boolean)
 

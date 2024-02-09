@@ -30,34 +30,24 @@ header a {
     color: black; 
 }
 
-header form {
-    margin-top: 10px;
+.welcome {
+    display: flex;
+    justify-content: center;
 }
 
-header input{
-    width: 120px;
-    height: 40px;
-    color: black;
-    border: 1px solid #ccc;
-    border-radius: 12px;
+.return  {
+    display: flex;
+    justify-content: center;
     font-size: 13px;
+    
 }
 
-header ul {
-    list-style-type: none;
-    margin: 17px;
-    padding: 0;
-}
-
-header form {
-    display: inline-block;
-    text-decoration: none;
-    color: white; 
-}
-
-header .return input {
+.return input {
+   
     font-size: 13px;
     width: 270px;
+    height: 35px;
+    border-radius: 8px;
 }
 
 .image-container {
@@ -69,12 +59,11 @@ header .return input {
 img {
     position: relative;
     left: 90px;
-    
     width: 450px;
-    height: 250px;
-    border-radius: 40px;  
-    cursor: grab; 
+    height: 250px; 
+    cursor: grab;    
 }
+
 
 p {
     text-align: center; 
@@ -94,6 +83,7 @@ footer {
     text-decoration: none;
     color: #130505; 
     margin: 20px;
+    font-size: 20px;
 }
 
 .reseaux-sociaux a:hover {

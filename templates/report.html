@@ -12,11 +12,11 @@
         <h1>Historique des Patients</h1>
         <a href="/">Se Déconnecter</a>  
     </header>
+    <h1 class="welcome">{{welcome}}</h1>
     <!-- Main content of the page -->
     <main>
-        <h1>{{welcome}}</h1>
         {% if boolean == True %}
-        <h2>{{message}}</h2>
+        <p>{{message}}</p>
         <form class="return" method="post">
             <input type="hidden" name="takeform" value="takeform">
             <input type="submit" value="si vous n'avez pas passé le test appuis ici">
@@ -44,7 +44,7 @@
     </main>
     <!-- Page footer with social media links -->
     <footer>
-        <div class="reseaux-sociaux">
+        <div class="reseaux-sociaux">   
             <a href="https://www.facebook.com/VotrePage" target="_blank">Facebook</a>
             <a href="https://twitter.com/VotreCompte" target="_blank">Twitter</a>
             <a href="https://www.instagram.com/VotreCompte/" target="_blank">Instagram</a>
