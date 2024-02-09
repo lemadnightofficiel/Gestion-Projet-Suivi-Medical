@@ -6,6 +6,7 @@ views = Blueprint(__name__, "views")
 # Login page
 @views.route("/", methods = ['GET','POST'])
 def login():
+    
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
@@ -31,7 +32,7 @@ def signup():
         if password != password_confirm:
             return render_template("join-us.html", message = "Please confirm your new password")
         database_functions.send_to_users_db(name,lastname,sex,birthday,username, password)
-        return redirect(url_for("views.login", message="Account created successfully"))
+        return redirect(url_for("views.login"))
     return render_template("join-us.html")
 
 # Form page
@@ -84,8 +85,9 @@ def report(username):
         pressure_message = checkvalues_functions.check_pressure(tas, tad)
         oxy_sat_message = checkvalues_functions.check_saturation(oxy_sat)
 
+        graph_functions.delete_allgraph()
+
     # Graphics
-    graph_functions.delete_allgraph()
     bpm_image = graph_functions.bpm_graph(getvalues_functions.get_bpm_values(username))
     imc_image = graph_functions.imc_graph(getvalues_functions.get_imc_values(username))
     pressure_image = graph_functions.pressure_graph(getvalues_functions.get_pressure_values(username))
