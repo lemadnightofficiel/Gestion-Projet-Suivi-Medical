@@ -66,9 +66,9 @@ def get_pressure_values(username): #To get the blood pressure
     return pressure_date
 
 def get_imc(weight, height): #To calculate the IMC
-    weight = float(weight) # kg
-    height = float(height*0.1) # cm
+    height = height/100 # cm => m
     imc = (weight/(height*height))
+    print(imc)
     return imc
 
 def get_age(birthday):

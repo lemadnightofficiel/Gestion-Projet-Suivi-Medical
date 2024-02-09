@@ -103,8 +103,8 @@ def report(username):
             return redirect(url_for("views.form", username=username)) # Redirects user to the form page
     
     if len(database_functions.get_today_info(username))==0: # Checks if the user has filled the form today
-        bpm_message = imc_message = pressure_message = oxy_sat_message = "Vous n'avez pas remplis le formulaire aujoud'hui"
-        message = "Vous n'avez pas remplis le formulaire aujourd'hui! Pour avoir un suivi personalisé, veuillez remplir le formulaire chaque jour."
+        bpm_message = imc_message = pressure_message = oxy_sat_message = "Vous n'avez pas rempli le formulaire aujoud'hui"
+        message = "Vous n'avez pas rempli le formulaire aujourd'hui! Pour avoir un suivi personalisé, veuillez remplir le formulaire chaque jour."
         boolean = True
     else: # Collects the user's medical info from today
         message = ""
@@ -114,7 +114,7 @@ def report(username):
 
         # Checks the data 
         bpm_message = checkvalues_functions.check_bpm(bpm, sex, age)
-        imc_message = checkvalues_functions.check_imc(getvalues_functions.get_imc(height, weight))
+        imc_message = checkvalues_functions.check_imc(getvalues_functions.get_imc(weight, height))
         pressure_message = checkvalues_functions.check_pressure(tas, tad)
         oxy_sat_message = checkvalues_functions.check_saturation(oxy_sat)
 
