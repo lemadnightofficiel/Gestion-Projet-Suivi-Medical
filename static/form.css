@@ -1,4 +1,4 @@
-/* Réglages généraux pour le corps de la page */
+/* Réglages le corps de la page */
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
@@ -11,7 +11,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: gray; 
+    background: #ED213A;  
+    background: -webkit-linear-gradient(to right, #93291E, #ED213A);  
+    background: linear-gradient(to right, #b94134, #ED213A);  
     padding: 10px 20px; 
 }
 header form {
@@ -36,18 +38,20 @@ header img {
     width: 80px;
     border-radius: 50%;
 }
-div li  {
+
+.logout  {
     list-style: none; 
 }
 
-div li a {
+.logout a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     padding: 10px;
-    color: black; 
+    color: black;
+    background-color: rgb(244, 248, 244);
+    border-radius: 12px;
 }
 
-/* Styles pour les sections de la page */
 form {
     display: flex;
     flex-direction: column;
@@ -120,7 +124,7 @@ input[type="submit" i]{
     width: 120px;
     height: 40px;
     color: black;
-    background-color: rgb(91, 243, 91);
+    background-color: rgb(247, 251, 247);
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 12px;

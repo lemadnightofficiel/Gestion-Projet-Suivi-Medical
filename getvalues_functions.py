@@ -42,7 +42,7 @@ def get_imc_values(username): #To get the imc
 
     imc_date = []
     for data in data_list: #For loop to replace elements and add IMC to the data
-        imc = get_imc(data[0],data[1])
+        imc = get_imc(data[1],data[0])
         data = list(data)
         data[0] = imc
         data[2] = datetime.strptime(data[2], '%Y-%m-%d').strftime('%d-%m-%Y')
@@ -68,7 +68,6 @@ def get_pressure_values(username): #To get the blood pressure
 def get_imc(weight, height): #To calculate the IMC
     height = height/100 # cm => m
     imc = (weight/(height*height))
-    print(imc)
     return imc
 
 def get_age(birthday):

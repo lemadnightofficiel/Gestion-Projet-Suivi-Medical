@@ -1,2 +1,0 @@
-Godwin nous a aider avec la page signup, il y avait un bug lors de la verification et l'enregistrement dans la base de donnée
-Matthieu a aidé le groupe de Nino, Emmanuel, Guillaume et Arthur via un problème de chargement du module JS de Discord.

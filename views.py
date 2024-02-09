@@ -118,10 +118,9 @@ def report(username):
         pressure_message = checkvalues_functions.check_pressure(tas, tad)
         oxy_sat_message = checkvalues_functions.check_saturation(oxy_sat)
 
-        # Errases the previous graphs before making new ones
+
+    # Errases the previous graphs before making new ones
         graph_functions.delete_allgraph()
-
-
     # Creates 4 Graphs
     bpm_image = graph_functions.bpm_graph(getvalues_functions.get_bpm_values(username))
     imc_image = graph_functions.imc_graph(getvalues_functions.get_imc_values(username))
