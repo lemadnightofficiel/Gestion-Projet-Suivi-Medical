@@ -25,7 +25,7 @@ def check_pressure(pas, pad): #Check the value of the blood pressure (pas = Pres
         return "Votre tension est optimale."
     elif 120 <= pas < 130  and 80 <= pad < 85: #Slightly Elevated Blood Pressure
         return "Votre tension est légèrement élevée."
-    elif 130 <= pas < 140  and 85 <= pad < 90: #Prähypertension
+    elif 130 <= pas < 140  and 85 <= pad < 90: #Prähypertension für die Elsässer
         return "Vous êtes en pré-hypertension."
     elif 140 <= pas < 160  and 90 <= pad < 100: #Mild Hypertension
         return "Vous êtes en hypertension légère."
@@ -77,12 +77,12 @@ def check_pulse(bpm, sexe, age): #Check the value of the BPM and return its stat
             return "Votre BPM est de", bpm, ", il est trop bas. Vous souffrez d'insuffisance cardiaque."
         else: #Highly BPM
             return "Votre BPM est de", bpm, ", il est trop élevé. Vous souffrez de tachycardie."
-    elif 10 <= age <= 25: #Between zehn and twenty-five year old
+    elif 10 <= age <= 25: #Zwischen zehn und fünfundzwanzig Jahren
         if 60 <= bpm <= 100:
             return "Votre BPM est de", bpm, ", votre cœur est en bonne santé."
-        elif bpm < 60: #Gering BPM
+        elif bpm < 60: #Gering Schläge pro Minute
             return "Votre BPM est de", bpm, ", il est trop bas. Vous souffrez d'insuffisance cardiaque."
-        else: #Hoch BPM
+        else: #Hoch Schläge pro Minute
             return "Votre BPM est de", bpm, ", il est trop élevé. Vous souffrez de tachycardie."
     elif 26 <= age <= 35: #Between twenty-six and thirty-five year
         if 62 <= bpm <= 100:
@@ -109,7 +109,7 @@ def check_pulse(bpm, sexe, age): #Check the value of the BPM and return its stat
                 return "Votre BPM est de", bpm, ", il est trop élevé. Vous souffrez de tachycardie."
     
     if 46 <= age <= 55: #Between forty-six and fifty-five year old
-        if sexe: #Für mann
+        if sexe: #Für Männer die Alkohol lieben
             if 64 <= bpm <= 100:
                 return "Votre BPM est de", bpm, ". Votre cœur est en bonne santé."
             elif bpm < 64: #Weak BPM
