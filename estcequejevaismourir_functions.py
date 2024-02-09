@@ -47,7 +47,7 @@ def check_saturation(sat): #Check the value of the oxygen saturation and return 
     else:
         return "Votre saturation en oxygène est de "+ str(sat) +"% , cela est dangereux."
 
-def check_bpm(bpm, sexe, age):
+def ShakeItOff_bpm(bpm, sexe, age):
 
     if age <= 2:
         if 80 <= bpm <= 160:

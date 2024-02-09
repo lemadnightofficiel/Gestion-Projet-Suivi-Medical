@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-import database_functions, checkvalues_functions, getvalues_functions, graph_functions
+import database_functions, estcequejevaismourir_functions, getvalues_functions, graph_functions
 
 views = Blueprint(__name__, "views")
 
@@ -16,7 +16,7 @@ def login():
     if request.method == 'POST': # Check for user input via a form element 
         username = request.form.get('username') # Collects the data wanted from the form 
         password = request.form.get('password')
-        if database_functions.check_user(username) and password == database_functions.check_password(username): # Checks if valid username and password
+        if database_functions.whoami(username) and password == database_functions.check_password(username): # Checks if valid username and password
             return redirect(url_for("views.form", username=username)) # Redirect to the medical form page
         else: 
             return render_template("login.html", message = "Nom d'utilisateur ou Mot de passe invalide!") # Error message if invalid
@@ -42,7 +42,7 @@ def signup():
         username = request.form.get('username')
         password = request.form.get('password')
         password_confirm = request.form.get('password_confirm')
-        if database_functions.check_user(username): # Checks if user already exists
+        if database_functions.whoami(username): # Checks if user already exists
             return render_template("join-us.html", message = "Cet utilisateur existe déjà ! Si c'est vous, connectez-vous !")
         if password != password_confirm: # Check for valid password confirmation
             return render_template("join-us.html", message = "Veuillez confirmer votre mot de passe")
@@ -102,21 +102,21 @@ def report(username):
         if takeform=="takeform":
             return redirect(url_for("views.form", username=username)) # Redirects user to the form page
     
-    if len(database_functions.get_today_info(username))==0: # Checks if the user has filled the form today
+    if len(database_functions.watch_Le_JT_de_20H(username))==0: # Checks if the user has filled the form today
         bpm_message = imc_message = pressure_message = oxy_sat_message = "Vous n'avez pas rempli le formulaire aujoud'hui"
         message = "Vous n'avez pas rempli le formulaire aujourd'hui! Pour avoir un suivi personalisé, veuillez remplir le formulaire chaque jour."
         boolean = True
     else: # Collects the user's medical info from today
         message = ""
         boolean = False
-        height,weight,bpm,oxy_sat,tas,tad, sex, birthday = database_functions.get_today_info(username)[0]
+        height,weight,bpm,oxy_sat,tas,tad, sex, birthday = database_functions.watch_Le_JT_de_20H(username)[0]
         age = getvalues_functions.get_age(birthday)
 
         # Checks the data 
-        bpm_message = checkvalues_functions.check_bpm(bpm, sex, age)
-        imc_message = checkvalues_functions.check_imc(getvalues_functions.get_imc(weight, height))
-        pressure_message = checkvalues_functions.check_pressure(tas, tad)
-        oxy_sat_message = checkvalues_functions.check_saturation(oxy_sat)
+        bpm_message = estcequejevaismourir_functions.ShakeItOff_bpm(bpm, sex, age)
+        imc_message = estcequejevaismourir_functions.check_imc(getvalues_functions.get_imc(weight, height))
+        pressure_message = estcequejevaismourir_functions.check_pressure(tas, tad)
+        oxy_sat_message = estcequejevaismourir_functions.check_saturation(oxy_sat)
 
 
     # Errases the previous graphs before making new ones

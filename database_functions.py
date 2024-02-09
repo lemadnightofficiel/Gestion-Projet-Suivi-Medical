@@ -2,7 +2,7 @@ import sqlite3
 from datetime import date
 
 
-def send_to_medicalinfo_db(medical_values,username):
+def send_to_medicalinfo_db(carte_vitale,num_sécu_sociale):
     '''
     Function: send_to_medicalinfo_db
     - Sends informations to medicalinfo table in pulse_report database
@@ -20,10 +20,10 @@ def send_to_medicalinfo_db(medical_values,username):
     '''
     connection = sqlite3.connect("pulse_report.db") #Connect to the local database 
     cursor = connection.cursor() 
-    cursor.execute("SELECT userID FROM users WHERE username=?", [username]) # get userID from username in users table
+    cursor.execute("SELECT userID FROM users WHERE username=?", [num_sécu_sociale]) # get userID from username in users table
     userID = cursor.fetchall()[0][0]
     today = date.today() # get today's date
-    height,weight,bpm,oxy_sat,tas,tad = medical_values
+    height,weight,bpm,oxy_sat,tas,tad = carte_vitale
     cursor.execute("INSERT INTO medicalinfo (userID, date, height, weight, bpm, oxy_sat, tas, tad) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", (userID, today, height, weight, bpm, oxy_sat, tas, tad)) # insert new line with all the infos in the medicalinfo table
     connection.commit() # apply modifications to the database when finnished
     connection.close() # faut pas un bac+5 pour comprendre cette ligne
@@ -51,7 +51,7 @@ def send_to_users_db(name,lastname,sex,birthday,username,password):
     connection.close()
     return None
 
-def check_user(username):
+def whoami(username): 
     '''
     Function: check_users
     - checks if a user exists in the users table or not
@@ -117,7 +117,7 @@ def check_password(username):
     - Password of the user if the user exists
     - None if the user does not exists
     '''
-    if check_user(username): 
+    if whoami(username): 
         connection = sqlite3.connect("pulse_report.db") #Connect to local database
         cursor = connection.cursor()
         cursor.execute("SELECT password FROM users WHERE username=?", [username])
@@ -127,7 +127,7 @@ def check_password(username):
     else:
         return None
 
-def get_today_info(username):
+def watch_Le_JT_de_20H(username): # (original : get_today_info)
     '''
     Function: get_today_info
     - collects all of the users medical info from today in the medicalinfo database
