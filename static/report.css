@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #F5F5DC;
+    background-color: white ;
     margin: 0;
     padding: 0;
 }
@@ -15,9 +15,30 @@ header {
 }
 
 h1 {
-   
     align-items: center;
+    margin: 15px;
 }
+header .logout {
+    width: 120px;
+    height: 40px;
+    color: black;
+    margin-bottom: 2px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 12px;
+    font-size: 13px;
+    margin: 11px;
+}
+
+header .logout a {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 12px;
+    color: black;
+}
+
 
 header form {
     margin-top: 10px;
@@ -27,11 +48,9 @@ header input{
     width: 120px;
     height: 40px;
     color: black;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 12px;
     font-size: 13px;
-    margin: 10px;
 }
 
 header ul {
