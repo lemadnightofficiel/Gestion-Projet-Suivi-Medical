@@ -25,7 +25,7 @@ def bpm_graph(data_list): #To display a BPM graph
     plt.title('Suivi de votre BPM :')
 
     plt.savefig(f"static/graph/bpm_graph_{time}.png") #Save the file with the date
-    return f"static/graph/bpm_graph_{time}.png"
+    return f"../static/graph/bpm_graph_{time}.png"
 
 def oxysat_graph(data_list): #To display an oxygen saturation graph
 
@@ -49,7 +49,7 @@ def oxysat_graph(data_list): #To display an oxygen saturation graph
     plt.title('Suivi de votre saturation en oxygène :')
 
     plt.savefig(f"static/graph/oxysat_graph_{time}.png") #Save the file with the date
-    return f"static/graph/oxysat_graph_{time}.png"
+    return f"../static/graph/oxysat_graph_{time}.png"
 
 def imc_graph(data_list): #To display an imc graph
 
@@ -73,7 +73,7 @@ def imc_graph(data_list): #To display an imc graph
     plt.title('Suivi de votre IMC :')
 
     plt.savefig(f"static/graph/imc_graph_{time}.png") #Save the file with the date
-    return f"static/graph/imc_graph_{time}.png"
+    return f"../static/graph/imc_graph_{time}.png"
 
 def pressure_graph(data_list): #To display a pressure graph
 
@@ -100,7 +100,7 @@ def pressure_graph(data_list): #To display a pressure graph
     plt.title('Suivi de votre Tension :')
 
     plt.savefig(f"static/graph/pressure_graph_{time}.png") #Save the file with the date
-    return f"static/graph/pressure_graph_{time}.png"
+    return f"../static/graph/pressure_graph_{time}.png"
 
 def delete_allgraph():
     for graph in os.listdir('static/graph'):

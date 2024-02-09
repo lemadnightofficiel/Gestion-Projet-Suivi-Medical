@@ -13,7 +13,8 @@ def get_bpm_values(username): #To get the BPM
     bpm_date = []
     for data in data_list: #For loop to replace informations and change the date
         data = list(data)
-        data[2] = datetime.strptime(data[2], '%Y-%m-%d').strftime('%d-%m-%Y')
+        print(data[1])
+        data[1] = datetime.strptime(data[1], '%Y-%m-%d').strftime('%d-%m-%Y')
         bpm_date.append(data)
     return bpm_date 
 
