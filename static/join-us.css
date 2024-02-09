@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: white;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -69,7 +69,7 @@ input[type="submit"] {
     border-radius: 10px;
     cursor: pointer;
     height: 40px;
-    width: 250px;
+    width: 120px;
 }
 
 input[type="submit"]:hover {
