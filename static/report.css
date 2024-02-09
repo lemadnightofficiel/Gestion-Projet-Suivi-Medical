@@ -62,18 +62,10 @@ header a {
 }
 
 img {
-<<<<<<< HEAD
     justify-self: center;
     width: 550px;
     border-radius: 40px;  
     cursor: grab; 
-=======
-    position: relative;
-    left: 90px;
-    width: 450px;
-    height: 250px; 
-    cursor: grab;    
->>>>>>> origin/najm
 }
 
 

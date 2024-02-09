@@ -19,7 +19,7 @@ def login():
         if database_functions.check_user(username) and password == database_functions.check_password(username): # Checks if valid username and password
             return redirect(url_for("views.form", username=username)) # Redirect to the medical form page
         else: 
-            return render_template("login.html", message = "Invalid Username or Password") # Error message if invalid
+            return render_template("login.html", message = "Nom d'utilisateur ou Mot de passe invalide!") # Error message if invalid
     return render_template("login.html") # Specifies the page displayed 
 
 # Signup page
@@ -43,9 +43,9 @@ def signup():
         password = request.form.get('password')
         password_confirm = request.form.get('password_confirm')
         if database_functions.check_user(username): # Checks if user already exists
-            return render_template("join-us.html", message = "User already exists! If this is you, go to the login page")
+            return render_template("join-us.html", message = "Cet utilisateur existe déjà ! Si c'est vous, connectez-vous !")
         if password != password_confirm: # Check for valid password confirmation
-            return render_template("join-us.html", message = "Please confirm your new password")
+            return render_template("join-us.html", message = "Veuillez confirmer votre mot de passe")
         database_functions.send_to_users_db(name,lastname,sex,birthday,username, password) # Add the new account to the database
         return redirect(url_for("views.login")) # Redirects to the login page
     return render_template("join-us.html")  # Specifies the page displayed 
