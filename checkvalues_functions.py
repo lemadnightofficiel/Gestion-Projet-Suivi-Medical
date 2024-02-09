@@ -1,4 +1,4 @@
-def check_imc(imc):
+def check_imc(imc): #Check the value of the IMC and return its state
 
     if imc < 16.5:
         return "Votre IMC est de " + str(round(imc, 1)) + ". Vous êtes en insuffisance pondérale sévère."
@@ -15,30 +15,30 @@ def check_imc(imc):
     else:
         return "Votre IMC est de " + str(round(imc, 1)) + ". Vous êtes en obésité morbide."
 
-def check_pressure(pas, pad):
+def check_pressure(pas, pad): #Check the value of the blood pressure (pas = Pression artérielle systolique, pad = Pression artérielle diastolique) and return its state
 
-    if pas < 50 and pad < 50:
-        return "Vous êtes en hypotension sévère."
-    elif 50 <= pas < 90 and 50 <= pad < 60:
+    if pas < 50 and pad < 50: #Severe hypotension
+        return "Vous êtes en hypotension sévère." 
+    elif 50 <= pas < 90 and 50 <= pad < 60: #Hypotension
         return "Vous êtes en hypotension."
-    elif 90 <= pas < 120 and 60 <= pad < 80:
+    elif 90 <= pas < 120 and 60 <= pad < 80: #Good blood pressure
         return "Votre tension est optimale."
-    elif 120 <= pas < 130  and 80 <= pad < 85:
+    elif 120 <= pas < 130  and 80 <= pad < 85: #Slightly Elevated Blood Pressure
         return "Votre tension est légèrement élevée."
-    elif 130 <= pas < 140  and 85 <= pad < 90:
+    elif 130 <= pas < 140  and 85 <= pad < 90: #Prähypertension für die Elsässer
         return "Vous êtes en pré-hypertension."
-    elif 140 <= pas < 160  and 90 <= pad < 100:
+    elif 140 <= pas < 160  and 90 <= pad < 100: #Mild Hypertension
         return "Vous êtes en hypertension légère."
-    elif 160 <= pas < 180  and 100 <= pad < 105:
+    elif 160 <= pas < 180  and 100 <= pad < 105: #Moderate Hypertension
         return "Vous êtes en hypertension modérée."
-    elif pas >= 180 or pad >= 110:
+    elif pas >= 180 or pad >= 110: #Advanced Hypertension
         return "Vous êtes en Hypertension avancée."
-    elif pas >= 160:
+    elif pas >= 160: #Systolic Hypertension
         return "Vous êtes en hypertension systolique."
-    else:
+    else: #Fluctuating Blood Pressure
         return "Votre tension est à surveiller car elle peut présenter des fluctuations."
 
-def check_saturation(sat):
+def check_saturation(sat): #Check the value of the oxygen saturation and return its state
 
     if 94 <= sat <= 98:
         return "Votre saturation en oxygène est de "+ str(sat) +", tout va bien."
@@ -92,8 +92,8 @@ def check_bpm(bpm, sexe, age):
         else:
             return "Votre BPM est de "+ str(bpm) + ", il est trop élevé. Vous souffrez de tachycardie."
 
-    elif 36 <= age <= 45:
-        if sexe:
+    elif 36 <= age <= 45: #Between thirty-six and forty-five
+        if sexe: # For men
             if 63 <= bpm <= 100:
                 return "Votre BPM est de "+ str(bpm) + "Votre cœur est en bonne santé."
             elif bpm < 63:
@@ -108,8 +108,8 @@ def check_bpm(bpm, sexe, age):
             else:
                 return "Votre BPM est de "+ str(bpm) + ", il est trop élevé. Vous souffrez de tachycardie."
     
-    if 46 <= age <= 55:
-        if sexe:
+    if 46 <= age <= 55: #Between forty-six and fifty-five year old
+        if sexe: #Für Männer die Alkohol lieben
             if 64 <= bpm <= 100:
                 return "Votre BPM est de "+ str(bpm) + ". Votre cœur est en bonne santé."
             elif bpm < 64:
@@ -125,7 +125,7 @@ def check_bpm(bpm, sexe, age):
                 return "Votre BPM est de "+ str(bpm) +", il est trop élevé. Vous souffrez de tachycardie."
 
     if age >= 56:
-        if sexe:
+        if sexe: #For men
             if 62 <= bpm <= 100:
                 return "Votre BPM est de "+ str(bpm) +". Votre cœur est en bonne santé."
             elif bpm < 62:

@@ -84,6 +84,8 @@ def report(username):
         pressure_message = checkvalues_functions.check_pressure(tas, tad)
         oxy_sat_message = checkvalues_functions.check_saturation(oxy_sat)
 
+    # Graphics
+    graph_functions.delete_allgraph()
     bpm_image = graph_functions.bpm_graph(getvalues_functions.get_bpm_values(username))
     imc_image = graph_functions.imc_graph(getvalues_functions.get_imc_values(username))
     pressure_image = graph_functions.pressure_graph(getvalues_functions.get_pressure_values(username))
