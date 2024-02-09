@@ -146,7 +146,7 @@ def get_today_info(username):
     cursor.execute("SELECT medicalinfo.height, medicalinfo.weight, medicalinfo.bpm, medicalinfo.oxy_sat, medicalinfo.tas, medicalinfo.tad, users.sex, users.birthday FROM medicalinfo INNER JOIN users ON medicalinfo.userID = users.userID WHERE users.username=? AND medicalinfo.date=?", info)
     data = cursor.fetchall() # get all results from the command executed
     connection.close()
-    return data[0]
+    return data
 
 def get_name_lastname(username):
     '''

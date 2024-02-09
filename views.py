@@ -31,7 +31,7 @@ def signup():
         if password != password_confirm:
             return render_template("join-us.html", message = "Please confirm your new password")
         database_functions.send_to_users_db(name,lastname,sex,birthday,username, password)
-        return redirect(url_for("login.html", message="Account created successfully"))
+        return redirect(url_for("views.login", message="Account created successfully"))
     return render_template("join-us.html")
 
 # Form page
@@ -41,9 +41,12 @@ def form(username):
         return redirect(url_for("views.report", username=username)) #send user to next page
     if request.method == 'POST':
         skipform = request.form.get('skipform')
+        print(skipform)
         if skipform=="skipform":
+            print("test")
             return redirect(url_for("views.report", username=username)) #renvoie l'utilisateur vers la page suivante
         else:
+            print("test2")
             height = int(request.form.get('height'))
             weight = int(request.form.get('weight'))
             bpm = int(request.form.get('bpm'))
@@ -68,11 +71,13 @@ def report(username):
             return redirect(url_for("views.form", username=username))
     
     if len(database_functions.get_today_info(username))==0:
-        bpm_message,imc_message,pressure_message,oxy_sat_message = "Vous n'avez pas remplis le formulaire aujoud'hui"
+        bpm_message = imc_message = pressure_message = oxy_sat_message = "Vous n'avez pas remplis le formulaire aujoud'hui"
         message = "Vous n'avez pas remplis le formulaire aujourd'hui! Pour avoir un suivi personalisé, veuillez remplir le formulaire chaque jour."
         boolean = True
     else:
-        height,weight,bpm,oxy_sat,tas,tad, sex, birthday = database_functions.get_today_info(username)
+        message = ""
+        boolean = False
+        height,weight,bpm,oxy_sat,tas,tad, sex, birthday = database_functions.get_today_info(username)[0]
         age = getvalues_functions.get_age(birthday)
         bpm_message = checkvalues_functions.check_bpm(bpm, sex, age)
         imc_message = checkvalues_functions.check_imc(getvalues_functions.get_imc(height, weight))
@@ -85,6 +90,6 @@ def report(username):
     oxy_sat_image = graph_functions.oxysat_graph(getvalues_functions.get_oxysat_values(username))
 
     name,lastname = database_functions.get_name_lastname(username)
-    welcome = "Welcome" + str(name) + " " + str(lastname) + "!"
+    welcome = "Bienvenue " + str(name) + " " + str(lastname) + "!"
     return render_template("report.html", bpmimage=bpm_image, bpmmessage=bpm_message, imcimage=imc_image, imcmessage=imc_message, pressureimage=pressure_image, pressuremessage= pressure_message, oxysatimage=oxy_sat_image, oxysatmessage=oxy_sat_message, welcome=welcome, message=message, boolean=boolean)
 

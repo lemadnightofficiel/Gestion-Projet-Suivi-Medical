@@ -1,1 +1,2 @@
 Matthieu à aidé le groupe de Nino, Emmanuel, Guillaume et Arthur.
+Godwin nous a aider avec la page signup, il y avait un bug lors de la verification et l'enregistrement dans la base de donnée
