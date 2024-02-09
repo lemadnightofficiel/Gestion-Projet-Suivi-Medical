@@ -7,36 +7,33 @@
     <link rel="stylesheet" href="../static/report.css">
 </head>
 <body>
-
     <header>
-        <h1>Rapport Historique des Patients</h1>
-        <ul>
-            <li><a href="form.html">si vous n'avez pas passer le test appuis ici</a></li>
-        </ul>
+        <h1>Historique des Patients</h1>
+            <form class="return" action="/logout" method="post">
+                <input type="submit" value="si vous n'avez pas passer le test appuis ici">
+            </form>  
         <form class="logout" action="/logout" method="post">
             <input type="submit" value="Déconnexion">
         </form>
     </header>
-
-    <div class="image-container">
-        <figure>
-            <img src="{{bpmimage}}" alt="bpm graph">
-            <p>{{bpmmessage}}</p>
-        </figure>
-        <figure>
-            <img src="{{imcimage}}" alt="imc graph">
-            <p>{{imcmessage}}</p>
-        </figure>
-        <figure>
-            <img src="{{pressureimage}}" alt="pressure graph">
-            <p>{{pressuremessage}}</p>
-        </figure>
-        <figure>
-            <img src="{{oxysatimage}}" alt="oxygen saturation graph">
-            <p>{{oxysatmessage}}</p>
-        </figure>
-    </div>
-
+        <div class="image-container">
+            <figure>
+                <img src="{{bpmimage}}" alt="bpm graph">
+                <p>{{bpmmessage}}</p>
+            </figure>
+            <figure>
+                 <img src="{{imcimage}}" alt="imc graph">
+                 <p>{{imcmessage}}</p>
+            </figure>
+            <figure>
+                <img src="{{pressureimage}}" alt="pressure graph">
+                <p>{{pressuremessage}}</p>
+            </figure>
+            <figure>
+                <img src="{{oxysatimage}}" alt="oxygen saturation graph">
+                <p>{{oxysatmessage}}</p>
+            </figure>
+        </div>
     <footer>
         <div class="reseaux-sociaux">
             <a href="https://www.facebook.com/VotrePage" target="_blank">Facebook</a>
