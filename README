@@ -16,3 +16,13 @@ Pour commencer, vous arriverez sur une page de connexion où il vous sera demand
 À quoi sert cette application et à qui est-elle adressée ?
 
 Comme vu précédemment, l’objectif de cette application est de générer différents rapports médicaux afin de suivre les éléments basiques de votre santé en prenant en compte vos constantes vitales. Pour utiliser cette application de la meilleure manière possible, il est fortement recommandé voire nécessaire de posséder du matériel afin de mesurer ces constantes, à savoir un oxymètre et un tensiomètre au maximum. L’application est adressée aux personnes voulant suivre l’évolution des paramètres généraux de leur santé en fonction du temps, cela pourrait convenir aux personnes nécessitant un suivi médical que ce soit pour un besoin personnel ou auprès d’un professionnel dans ce domaine.
+
+Fonctionnalités à venir :
+
+- Sécurité des données personnelles (hashing mot de passe)
+- Modification des données journalières sur les rapports en cas d'erreur
+- Amélioration du visuel de l'application web
+- Possibilité de télécharger les rapports
+- Notification pour rappeler d'entrer les données du jour
+- Possibilité de modification des informations personnelles
+

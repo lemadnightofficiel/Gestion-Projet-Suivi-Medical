@@ -13,7 +13,6 @@ def get_bpm_values(username): #To get the BPM
     bpm_date = []
     for data in data_list: #For loop to replace informations and change the date
         data = list(data)
-        print(data[1])
         data[1] = datetime.strptime(data[1], '%Y-%m-%d').strftime('%d-%m-%Y')
         bpm_date.append(data)
     return bpm_date 
@@ -67,9 +66,9 @@ def get_pressure_values(username): #To get the blood pressure
     return pressure_date
 
 def get_imc(weight, height): #To calculate the IMC
-    weight = float(weight) # kg
-    height = float(height*0.1) # cm
+    height = height/100 # cm => m
     imc = (weight/(height*height))
+    print(imc)
     return imc
 
 def get_age(birthday):
