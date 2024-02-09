@@ -18,27 +18,17 @@ h1 {
     align-items: center;
     margin: 15px;
 }
-header .logout {
-    width: 120px;
-    height: 40px;
-    color: black;
-    margin-bottom: 2px;
-    border: 1px solid #ccc;
-    background-color: white;
-    border-radius: 12px;
-    font-size: 13px;
-    margin: 11px;
-}
 
-header .logout a {
+header a {
     display: flex;
     text-align: center;
     justify-content: center;
     text-decoration: none;
     margin-top: 12px;
-    color: black;
+    padding: 15px;
+    font-size: 17px;
+    color: black; 
 }
-
 
 header form {
     margin-top: 10px;
@@ -76,12 +66,14 @@ header .return input {
     margin-top: 0px;   
 }
 
+.box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
 img {
-    position: relative;
-    left: 90px;
-    
-    width: 450px;
-    height: 250px;
+    justify-self: center;
+    width: 550px;
     border-radius: 40px;  
     cursor: grab; 
 }

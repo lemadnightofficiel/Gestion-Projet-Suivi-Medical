@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for
 import database_functions, checkvalues_functions, getvalues_functions, graph_functions
 
 views = Blueprint(__name__, "views")

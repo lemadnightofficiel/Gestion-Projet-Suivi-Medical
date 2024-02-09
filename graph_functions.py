@@ -12,6 +12,7 @@ def bpm_graph(data_list): #To display a BPM graph
         os.remove(f"static/graph/bpm_graph_{time}.png") #Delete to replace the file with an other image
     
     bpm_fig = plt.figure("BPM") #Create a figure for avoid the elements accumulation in the graph
+    plt.figure().clear()
 
     x = []
     y = []
@@ -35,6 +36,7 @@ def oxysat_graph(data_list): #To display an oxygen saturation graph
         os.remove(f"static/graph/oxysat_graph_{time}.png") #Delete to replace the file with an other image
     
     oxysat_fig = plt.figure("OxySat")  #Create a figure for avoid the elements accumulation in the graph
+    plt.figure().clear()
 
     x = []
     y = []
@@ -59,6 +61,7 @@ def imc_graph(data_list): #To display an imc graph
         os.remove(f"static/graph/imc_graph_{time}.png") #Delete to replace the file with an other image
 
     imc_fig = plt.figure("IMC") #Create a figure for avoid the elements accumulation in the graph
+    plt.figure().clear()
 
     x = []
     y = []
@@ -83,6 +86,7 @@ def pressure_graph(data_list): #To display a pressure graph
         os.remove(f"static/graph/pressure_graph_{time}.png") #Delete to replace the file with an other image
 
     pressure_fig = plt.figure("Pressure") #Create a figure for avoid the elements accumulation in the graph
+    plt.figure().clear()
 
     systolique = []
     diastolique = []

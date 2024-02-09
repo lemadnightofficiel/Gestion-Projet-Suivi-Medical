@@ -7,22 +7,28 @@
     <link rel="stylesheet" href="../static/login.css">
 </head>
 <body>
+    <!-- Main content of the page -->
     <main>
+        <!-- Login form -->
         <article id="login" class="form">
             <form action="/" autocomplete="on" method="post">
                 {{message}}
                 <h1>Log in</h1>
+                <!-- Input field for username -->
                 <p>
                     <label for="username" class="uname" data-icon="u">Your username</label>
                     <input id="username" name="username" required autofocus type="text" placeholder="mysuperusername690" />
                 </p>
+                <!-- Input field for password -->
                 <p>
                     <label for="password" class="youpasswd" data-icon="p">Your password</label>
                     <input id="password" name="password" required type="password" placeholder="eg. X8df!90EO" />
                 </p>
+                <!-- Form submission button -->
                 <p class="login button">
                     <input type="submit" value="Login" name="login" />
                 </p>
+                <!-- Link to the signup page -->
                 <p class="link">
                     Not a member yet ?
                     <a href="/signup" class="to_register">Join us</a>

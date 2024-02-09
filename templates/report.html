@@ -7,38 +7,44 @@
     <link rel="stylesheet" href="../static/report.css">
 </head>
 <body>
+    <!-- header with logout link -->
     <header>
         <h1>Historique des Patients</h1>
         <a href="/">Se Déconnecter</a>  
     </header>
+    <!-- Main content of the page -->
     <main>
         <h1>{{welcome}}</h1>
         {% if boolean == True %}
-        <h2>{{message}}</h2>
-        <form class="return" method="post">
-            <input type="hidden" name="takeform" value="takeform">
-            <input type="submit" value="si vous n'avez pas passé le test appuis ici">
-        </form>
+        <section class="backtoform">
+            <p>{{message}}</p>
+            <form class="return" method="post">
+                <input type="hidden" name="takeform" value="takeform">
+                <input type="submit" value="si vous n'avez pas passé le test appuis ici">
+            </form>
+        </section>
         {% endif %}
+        <!-- Container for graph BPM, IMC,pressure, and oxygen saturation  -->
         <div class="image-container">
-            <figure>
+            <figure class="box">
                 <img src="{{bpmimage}}" alt="bpm graph">
                 <p>{{bpmmessage}}</p>
             </figure>
-            <figure>
+            <figure class="box">
                  <img src="{{imcimage}}" alt="imc graph">
                  <p>{{imcmessage}}</p>
             </figure>
-            <figure>
+            <figure class="box">
                 <img src="{{pressureimage}}" alt="pressure graph">
                 <p>{{pressuremessage}}</p>
             </figure>
-            <figure>
+            <figure class="box">
                 <img src="{{oxysatimage}}" alt="oxygen saturation graph">
                 <p>{{oxysatmessage}}</p>
             </figure>
         </div>
     </main>
+    <!-- Page footer with social media links -->
     <footer>
         <div class="reseaux-sociaux">
             <a href="https://www.facebook.com/VotrePage" target="_blank">Facebook</a>
