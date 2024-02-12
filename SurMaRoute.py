@@ -17,7 +17,7 @@ def login():
         username = request.form.get('username') # Collects the data wanted from the form 
         password = request.form.get('password')
         if database_functions.whoami(username) and password == database_functions.check_password(username): # Checks if valid username and password
-            return redirect(url_for("views.form", username=username)) # Redirect to the medical form page
+            return redirect(url_for("SurMaRoute.form", username=username)) # Redirect to the medical form page
         else: 
             return render_template("login.html", message = "Nom d'utilisateur ou Mot de passe invalide!") # Error message if invalid
     return render_template("login.html") # Specifies the page displayed 
@@ -47,7 +47,7 @@ def signup():
         if password != password_confirm: # Check for valid password confirmation
             return render_template("join-us.html", message = "Veuillez confirmer votre mot de passe")
         database_functions.send_to_users_db(name,lastname,sex,birthday,username, password) # Add the new account to the database
-        return redirect(url_for("views.login")) # Redirects to the login page
+        return redirect(url_for("SurMaRoute.login")) # Redirects to the login page
     return render_template("join-us.html")  # Specifies the page displayed 
 
 # Form page
@@ -62,11 +62,11 @@ def form(username):
     - The user is redirected to the report page
     '''
     if database_functions.check_date(username): # Check if user has already filled the form today
-        return redirect(url_for("views.report", username=username)) #send user to the report page
+        return redirect(url_for("SurMaRoute.report", username=username)) #send user to the report page
     if request.method == 'POST': # Check for user input via a form element 
         skipform = request.form.get('skipform')
         if skipform=="skipform":
-            return redirect(url_for("views.report", username=username)) #send user to the report page
+            return redirect(url_for("SurMaRoute.report", username=username)) #send user to the report page
         else:
             # Collect data from the form 
             height = int(request.form.get('height'))
@@ -83,7 +83,7 @@ def form(username):
             medical_values = (height, weight, bpm, oxy_sat, tas, tad)
             database_functions.send_to_medicalinfo_db(medical_values,username)
 
-            return redirect(url_for("views.report", username=username)) # Redirects user to the report page
+            return redirect(url_for("SurMaRoute.report", username=username)) # Redirects user to the report page
     return render_template("form.html")  # Specifies the page displayed 
 
 # Report page
@@ -100,7 +100,7 @@ def report(username):
     if request.method == 'POST': # Check for user input via a form element 
         takeform = request.form.get('takeform')
         if takeform=="takeform":
-            return redirect(url_for("views.form", username=username)) # Redirects user to the form page
+            return redirect(url_for("SurMaRoute.form", username=username)) # Redirects user to the form page
     
     if len(database_functions.watch_Le_JT_de_20H(username))==0: # Checks if the user has filled the form today
         bpm_message = imc_message = pressure_message = oxy_sat_message = "Vous n'avez pas rempli le formulaire aujoud'hui"

@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect("pulse_report.db")
+connection = sqlite3.connect("../pulse_report.db")
 cursor = connection.cursor()
 
 User_values = [
@@ -13,9 +13,10 @@ Medical_values = [
 (1, '2024-02-06', 175, 73, 80, 97, 112, 68),
 (1, '2024-02-07', 174, 74, 78, 98, 105, 67),
 (1, '2024-02-08', 176, 76, 83, 98, 110, 69),
-(2, '2024-02-06', 60, 13, 80, 97, 60, 20),
-(2, '2024-02-07', 70, 20, 78, 98, 78, 32),
-(2, '2024-02-08', 70, 20, 83, 98, 78, 32),
+(1, '2024-02-12', 175, 75, 68, 96, 121, 75),
+(2, '2024-02-06', 178, 64, 80, 97, 60, 20),
+(2, '2024-02-07', 178, 65, 78, 98, 78, 32),
+(2, '2024-02-08', 178, 64, 83, 98, 78, 32),
 ]
 
 cursor.executemany("INSERT INTO users (name, lastname, sex, birthday, username, password) VALUES (?, ?, ?, ?, ?, ?)", User_values) # execute many times the command until all values are sent
